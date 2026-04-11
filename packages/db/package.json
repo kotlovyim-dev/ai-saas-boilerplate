@@ -4,11 +4,11 @@
   "exports": {
     ".": {
       "types": "./src/generated/prisma/client/client.ts",
-      "default": "./src/generated/prisma/client/client.ts"
+      "default": "./index.cjs"
     },
     "./client": {
       "types": "./src/generated/prisma/client/client.ts",
-      "default": "./src/generated/prisma/client/client.ts"
+      "default": "./index.cjs"
     }
   },
   "scripts": {

@@ -3,7 +3,7 @@
 # 🤖 AI SaaS Boilerplate
 
 **Production-ready, multi-tenant AI platform starter.**  
-Built with Next.js 14, NestJS, PostgreSQL, pgvector, and OpenAI.
+Built with Next.js 16, NestJS, PostgreSQL, pgvector, and OpenAI.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)](https://www.typescriptlang.org/)

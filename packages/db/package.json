@@ -2,7 +2,14 @@
   "name": "@ai-saas/db",
   "version": "0.0.1",
   "exports": {
-    ".": "./src/generated/prisma/client/index.js"
+    ".": {
+      "types": "./src/generated/prisma/client/client.ts",
+      "default": "./src/generated/prisma/client/client.ts"
+    },
+    "./client": {
+      "types": "./src/generated/prisma/client/client.ts",
+      "default": "./src/generated/prisma/client/client.ts"
+    }
   },
   "scripts": {
     "db:generate": "prisma generate --schema=./prisma/schema.prisma",

@@ -282,9 +282,9 @@ All non-obvious decisions are documented in [`/docs/adr`](./docs/adr/).
 
 ## Roadmap
 
-- [ ] Monorepo setup + shared types
-- [ ] Multi-tenant DB schema
-- [ ] Auth (JWT + Refresh tokens)
+- [X] Monorepo setup + shared types
+- [X] Multi-tenant DB schema
+- [X] Auth (JWT + Refresh tokens)
 - [ ] OpenAI streaming integration
 - [ ] RAG pipeline
 - [ ] Observability (structured logs, LLM cost tracking)

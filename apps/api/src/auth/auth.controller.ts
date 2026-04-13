@@ -7,11 +7,14 @@ import {
   HttpCode,
   HttpStatus,
   UnauthorizedException,
+  UseGuards,
 } from "@nestjs/common";
 import { ApiTags, ApiOperation, ApiResponse } from "@nestjs/swagger";
 import type { Response, Request } from "express";
 import { AuthService } from "./auth.service";
 import { RegisterDto, LoginDto, AuthResponseDto } from "./dto";
+import { CurrentUser } from "./decorators/current-user-id.decorator";
+import { JwtAuthGuard } from "./guards/jwt-auth.guard";
 
 const REFRESH_COOKIE = "refresh_token";
 
@@ -74,17 +77,13 @@ export class AuthController {
   }
 
   @Post("logout")
+  @UseGuards(JwtAuthGuard)
   @HttpCode(HttpStatus.OK)
-  @ApiOperation({ summary: "Logout and invalidate refresh token" })
-  async logout(@Req() req: Request, @Res({ passthrough: true }) res: Response) {
-    const rawToken = req.cookies?.[REFRESH_COOKIE];
-
-    if (rawToken) {
-      // Знаходимо юзера і видаляємо всі його токени
-      // У реальному проекті тут краще зберігати userId в cookie (не секретний)
-      // і видаляти конкретний токен
-    }
-
+  async logout(
+    @CurrentUser() user: { userId: string },
+    @Res({ passthrough: true }) res: Response,
+  ) {
+    await this.authService.logout(user.userId);
     res.clearCookie(REFRESH_COOKIE, { path: "/auth/refresh" });
     return { message: "Logged out" };
   }

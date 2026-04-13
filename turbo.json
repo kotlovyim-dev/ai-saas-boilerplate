@@ -20,6 +20,11 @@
       "dependsOn": ["db:generate"],
       "cache": false,
       "persistent": true
+    },
+    "generate:api": {
+      "dependsOn": ["^generate:api"],
+      "outputs": ["packages/types/src/api.generated.ts"],
+      "cache": false
     }
   }
 }

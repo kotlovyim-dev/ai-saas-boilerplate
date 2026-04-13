@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Urbanist } from "next/font/google";
+import { AppProviders } from "@/app/providers";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
 
@@ -15,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI SaaS Boilerplate | Product Workflow Landing",
+  title: "AI SaaS Boilerplate | RAG Chat Workspace",
   description:
-    "Launch polished SaaS product pages faster with reusable sections, design tokens, and modern workflow components.",
+    "Build a multi-tenant AI chat app where users upload files and get grounded answers with retrieval-augmented generation.",
 };
 
 export default function RootLayout({
@@ -31,7 +32,9 @@ export default function RootLayout({
       className={`${urbanist.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <TooltipProvider>{children}</TooltipProvider>
+        <AppProviders>
+          <TooltipProvider>{children}</TooltipProvider>
+        </AppProviders>
       </body>
     </html>
   );

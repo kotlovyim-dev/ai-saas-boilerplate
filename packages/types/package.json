@@ -1,0 +1,14 @@
+{
+  "name": "@ai-saas/types",
+  "version": "0.0.1",
+  "exports": {
+    ".": "./src/index.ts",
+    "./api": "./src/api.generated.ts"
+  },
+  "scripts": {
+    "generate:api": "openapi-typescript http://localhost:3001/api/docs-json -o ./src/api.generated.ts"
+  },
+  "devDependencies": {
+    "openapi-typescript": "latest"
+  }
+}

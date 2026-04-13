@@ -123,7 +123,7 @@ export default function RegisterPage() {
             htmlFor="register-terms"
             className="text-sm font-normal text-slate-600"
           >
-          I agree to the Terms of Service and Privacy Policy
+            I agree to the Terms of Service and Privacy Policy
           </Label>
         </div>
 

@@ -3,7 +3,12 @@ import { ArrowUpRight, Sparkles, TrendingUp } from "lucide-react";
 import { AppSidebar } from "@/components/dashboard/app-sidebar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
 import {
   SidebarInset,
   SidebarProvider,
@@ -129,7 +134,9 @@ export default function DashboardPage() {
                 <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">
                   Week trend
                 </p>
-                <h2 className="mt-2 text-2xl font-semibold">Conversion pulse</h2>
+                <h2 className="mt-2 text-2xl font-semibold">
+                  Conversion pulse
+                </h2>
 
                 <div className="mt-5 flex items-end gap-2 rounded-xl border border-(--token-color-border) bg-muted/35 p-4">
                   {[20, 28, 33, 44, 39, 51, 58].map((height, index) => (

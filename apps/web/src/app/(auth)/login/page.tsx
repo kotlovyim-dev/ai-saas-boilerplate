@@ -75,7 +75,7 @@ export default function LoginPage() {
             htmlFor="login-remember"
             className="text-sm font-normal text-slate-600"
           >
-          Keep me signed in on this device
+            Keep me signed in on this device
           </Label>
         </div>
 
